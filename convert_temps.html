@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">	
+    <title>Convert from Fahrenheit to Centigrade</title>
+    <!--Bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body class="bg-dark">
+    <div class="container-fluid ">
+        <div class="col d-flex justify-content-center">
+                <div class="card mt-5" style="width: 25rem;">
+                    <div class="card-body">
+                    <h5 class="card-title">v1.0 Thanks for using the temperature converter!</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Built By Navjot Singh</h6>
+                    <p class="card-text"><strong>Purpose:</strong> The below program will convert 
+                        Fahrenheit to Celsius temperature.</p>
+                        
+                    <strong>What's included ?</strong>
+                    <ul class="list-group ">
+                        <li class="list-group-item p-1">prompt() and alert() methods used</li>
+                    </ul>  
+                    <a href="convert_temps.html" type="button" class="btn btn-sm btn-success mt-3">Try Again &#x21bb;</a>
+                    <a href="convert_temps_enhanced.html" class="mt-3 card-link float-right" >Try enhanced version v1.1 &raquo;</a>
+                    </div>
+                </div>  
+        </div>
+    </div>
+   
+  <!--Js code start from here-->
+    <script>
+        
+    	/* v1.0 The below program will convert 
+           Fahrenheit to Celsius temperature
+        */
+        
+        //Prompt init on page load and accept int value
+        var Fahrenheit = parseInt(prompt('Enter Fahrenheit temperature : ')); 
+        
+        //Fahrenheit to Celsius formula
+        var FtoC =  (Fahrenheit - 32) * 5/9;
+        
+        //processor function only call when user enter the value inside prompt else give NaN
+        if (!isNaN(parseInt(Fahrenheit))) {
+            processor();
+        }
+
+		/* (value).toFixed(2) display number format
+            example: 3.333333 to 3.33
+        */
+        function processor() {
+          
+              alert('Fahrenheit temperature is '+ Fahrenheit +'\n'+ 
+              'Celsius temperature is '+ (FtoC).toFixed(2));
+        }
+    </script>
+</body>
+</html>
