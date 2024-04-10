@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">	
+    <title>Convert from Fahrenheit to Centigrade Enhanced</title>
+    <!--Bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body class="bg-dark">
+    <div class="container-fluid ">
+      <div class="col d-flex justify-content-center">
+              <div class="card mt-5" style="width: 25rem;">
+                <a href="convert_temps_enhanced.html" type="button" class="btn btn-sm btn-success">Try Again &#x21bb;</a>  
+                  <div class="card-body">
+                  <h5 class="card-title">v1.1 Thanks for using the temperature converter Enhanced Version!</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Built By Navjot Singh</h6>
+                  <p class="card-text"><strong>Purpose:</strong> The below program will convert 
+                      Fahrenheit to Celsius temperature.</p>
+                    <strong>What's new ?</strong>
+                      <ul class="list-group ">
+                        <li class="list-group-item p-1">Data validation between -100 and 212</li>
+                        <li class="list-group-item p-1">Application end if 999 or above</li>
+                        <li class="list-group-item p-1">Loop added without restart the application</li>
+                        <li class="list-group-item p-1">If the entry is invalid, alert appears</li>
+                      </ul>
+                  <a href="convert_temps.html"  class="card-link float-left mt-3">&laquo; Previous</a>  
+                  <a href="letter_grade.html" class="card-link float-right mt-3" >Try Number-letter Grade v1.2 &raquo;</a>
+                  </div>
+              </div>
+      </div>
+  </div>
+    
+  <!--Js code start from here-->
+    <script>
+    	/* v1.1
+           The below program will convert Fahrenheit to Celsius temperature and enhanced version.
+        */
+        
+        //Calling processor function on page load
+        processor();
+
+        function processor() {
+            
+            //Prompt init on page load and accept int value
+            var Fahrenheit = parseInt(prompt('Enter Fahrenheit temperature : '));
+            range_specifier(Fahrenheit); //call range_specifier and passing parameter         
+        }
+        
+        function range_specifier(Fahrenheit) {
+        
+             if (Fahrenheit < -100) { //checking if parameter is less than -100
+                  alert('Entry must be range from -100 to +212');  
+                  processor();
+             } else if (Fahrenheit > 212) { //checking if parameter is greater than +212
+                  if (Fahrenheit >= 999) { //checking if parameter is greater than equal 999
+                   return 0; //end the application
+                  }
+                 alert('Entry must be range from -100 to +212');
+                 processor(); //restart the process
+                 
+             } else { //checking if parameter is in between -100 and +212
+              
+               if(isNaN(parseInt(Fahrenheit))){ //checking if parameter is empty or not or valid int
+                 alert('You must be Enter something!');  
+                 processor(); //restart the process
+               } else { 
+               
+                 //Fahrenheit to Celsius formula
+                 var FtoC =  (Fahrenheit - 32) * 5/9;
+                 
+                 /* output the result in alert
+                    (value).toFixed(2) display number format
+                    example: 3.333333 to 3.33
+                */
+                 alert('Fahrenheit temperature is '+ Fahrenheit +'\n'+ 
+                'Celsius temperature is '+ (FtoC).toFixed(2));
+                 processor();  //restart the process
+              }
+            }
+            
+        }
+        
+        
+    </script>
+</body>
+</html>
